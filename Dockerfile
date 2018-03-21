@@ -1,9 +1,12 @@
 FROM jupyter/base-notebook
 USER root
-RUN mkdir /installation & chown -R  1000:100 /installation
-RUN mkdir /data & chown -R 1000:100 /data
+RUN mkdir /installation
+RUN chown -R  1000:100 /installation
+RUN mkdir /data 
+RUN chown -R 1000:100 /data
 RUN touch /data/PUT_DATA_HERE
-RUN mkdir /working & chown -R  1000:100 /working
+RUN mkdir /working
+RUN chown -R  1000:100 /working
 USER jovyan
 VOLUME ["/data"]
 VOLUME ["/working"]
